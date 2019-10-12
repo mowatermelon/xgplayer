@@ -90,6 +90,11 @@ class HlsJsPlayer extends Player {
       }
     })
     hls.on(Hls.Events.ERROR, (event, data) => {
+      player.emit('HLS_ERROR', {
+        errorType: data.type,
+        errorDetails: data.details,
+        errorFatal: data.fatal,
+      })
       if (data.fatal) {
         switch (data.type) {
           case Hls.ErrorTypes.NETWORK_ERROR:
