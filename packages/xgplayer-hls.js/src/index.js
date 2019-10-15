@@ -1,7 +1,7 @@
 import Player from 'xgplayer'
 import Hls from 'hls.js'
 import utils from './utils'
-
+console.log('[Player]: ', Player)
 class HlsJsPlayer extends Player {
   constructor (options) {
     super(options)
